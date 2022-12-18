@@ -1,10 +1,9 @@
 from wsgiref.simple_server import make_server
 
 from freed.main import Freed
-from freed.urls import routes
+from freed.urls import routes, fronts
 
-
-app = Freed(routes)
+app = Freed(routes, fronts)
 
 with make_server('', 8000, app) as httpd:
     print("Serving on port 8000...")

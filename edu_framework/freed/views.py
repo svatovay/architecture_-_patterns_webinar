@@ -17,7 +17,7 @@ class Index(_BaseSuccessView):
 
 class About(_BaseSuccessView):
     def __init__(self):
-        self.response = render('templates/about.html')
+        self.response = bytes(render('templates/about.html'), 'UTF-8')
 
 
 class NotFound:
