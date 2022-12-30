@@ -1,7 +1,7 @@
 from wsgiref.simple_server import make_server
 
 from freed.main import Freed
-from freed.urls import routes, fronts
+from edu_framework.urls import routes, fronts
 
 app = Freed(routes, fronts)
 

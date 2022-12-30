@@ -1,6 +1,6 @@
 from quopri import decodestring
 from .fr_request import PostRequests, GetRequests
-from .views import NotFound
+from edu_framework.views import NotFound
 from .middleware import middlewares
 
 
@@ -23,7 +23,7 @@ class Freed:
         if method == 'GET':
             request_params = GetRequests().get_request_params(environ)
             request['request_params'] = Freed.decode_value(request_params)
-            print(f"Содержимое POST: {request['request_params']}")
+            print(f"Содержимое GET: {request['request_params']}")
 
         path = environ['PATH_INFO']
         if path in self.routes:

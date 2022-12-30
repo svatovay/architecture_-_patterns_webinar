@@ -1,4 +1,4 @@
-from .templator import render
+from edu_framework.freed.templator import render
 
 
 class _BaseSuccessView:
@@ -11,13 +11,13 @@ class _BaseSuccessView:
 
 class Index(_BaseSuccessView):
     def __call__(self, request):
-        self.response = bytes(render('templates/index.html', **request), 'UTF-8')
+        self.response = bytes(render('index.html', **request), 'UTF-8')
         return '200 OK', [self.response]
 
 
 class About(_BaseSuccessView):
     def __init__(self):
-        self.response = bytes(render('templates/about.html'), 'UTF-8')
+        self.response = bytes(render('about.html'), 'UTF-8')
 
 
 class NotFound:
